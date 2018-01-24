@@ -1,0 +1,3 @@
+[submodule "lib/ethereum-alarm-clock"]
+	path = lib/ethereum-alarm-clock
+	url = https://github.com/ethereum-alarm-clock/ethereum-alarm-clock
