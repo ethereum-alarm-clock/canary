@@ -1,0 +1,926 @@
+{
+  "contractName": "SchedulerInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_toAddress",
+          "type": "address"
+        },
+        {
+          "name": "_callData",
+          "type": "bytes"
+        },
+        {
+          "name": "_uintArgs",
+          "type": "uint256[8]"
+        }
+      ],
+      "name": "schedule",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "temporalUnit",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "factoryAddress",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "futureTransaction",
+      "outputs": [
+        {
+          "name": "toAddress",
+          "type": "address"
+        },
+        {
+          "name": "callData",
+          "type": "bytes"
+        },
+        {
+          "name": "callGas",
+          "type": "uint256"
+        },
+        {
+          "name": "callValue",
+          "type": "uint256"
+        },
+        {
+          "name": "windowSize",
+          "type": "uint256"
+        },
+        {
+          "name": "windowStart",
+          "type": "uint256"
+        },
+        {
+          "name": "gasPrice",
+          "type": "uint256"
+        },
+        {
+          "name": "donation",
+          "type": "uint256"
+        },
+        {
+          "name": "payment",
+          "type": "uint256"
+        },
+        {
+          "name": "requiredDeposit",
+          "type": "uint256"
+        },
+        {
+          "name": "reservedWindowSize",
+          "type": "uint256"
+        },
+        {
+          "name": "freezePeriod",
+          "type": "uint256"
+        },
+        {
+          "name": "claimWindowSize",
+          "type": "uint256"
+        },
+        {
+          "name": "temporalUnit",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.18;\n\nimport \"../Library/RequestScheduleLib.sol\";\nimport \"../Library/SchedulerLib.sol\";\n\n/**\n * @title SchedulerInterface\n * @dev The base contract that the higher contracts: BaseScheduler, BlockScheduler and TimestampScheduler all inherit from.\n */\ncontract SchedulerInterface {\n    using SchedulerLib for SchedulerLib.FutureTransaction;\n\n    // The RequestFactory address which produces requests for this scheduler.\n    address public factoryAddress;\n    \n    // The TemporalUnit of this scheduler.\n    RequestScheduleLib.TemporalUnit public temporalUnit;\n\n    /*\n     * Local storage variable used to house the data for transaction\n     * scheduling.\n     */\n    SchedulerLib.FutureTransaction public futureTransaction;\n\n    /*\n     * When applied to a function, causes the local futureTransaction to\n     * get reset to it's defaults on each function call.\n     */\n    modifier doReset {\n        if (temporalUnit == RequestScheduleLib.TemporalUnit.Blocks) {\n            futureTransaction.resetAsBlock();\n        } else if (temporalUnit == RequestScheduleLib.TemporalUnit.Timestamp) {\n            futureTransaction.resetAsTimestamp();\n        } else {\n            revert();\n        }\n        _;\n    }\n        \n    function schedule(address   _toAddress,\n                      bytes     _callData,\n                      uint[8]   _uintArgs)\n        doReset\n        public payable returns (address);\n\n}\n",
+  "sourcePath": "/home/logan/Work/eac-canary/contracts/EAC/Interface/SchedulerInterface.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/logan/Work/eac-canary/contracts/EAC/Interface/SchedulerInterface.sol",
+      "exportedSymbols": {
+        "SchedulerInterface": [
+          399
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".18"
+          ]
+        },
+        "id": 340,
+        "name": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5009,
+          "absolutePath": "/home/logan/Work/eac-canary/contracts/EAC/Library/RequestScheduleLib.sol",
+          "file": "../Library/RequestScheduleLib.sol",
+          "scope": 400,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 341,
+        "name": "ImportDirective",
+        "src": "26:43:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5432,
+          "absolutePath": "/home/logan/Work/eac-canary/contracts/EAC/Library/SchedulerLib.sol",
+          "file": "../Library/SchedulerLib.sol",
+          "scope": 400,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 342,
+        "name": "ImportDirective",
+        "src": "70:37:3"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "@title SchedulerInterface\n@dev The base contract that the higher contracts: BaseScheduler, BlockScheduler and TimestampScheduler all inherit from.",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            399
+          ],
+          "name": "SchedulerInterface",
+          "scope": 400
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SchedulerLib",
+                  "referencedDeclaration": 5431,
+                  "type": "library SchedulerLib"
+                },
+                "id": 343,
+                "name": "UserDefinedTypeName",
+                "src": "310:12:3"
+              },
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SchedulerLib.FutureTransaction",
+                  "referencedDeclaration": 5051,
+                  "type": "struct SchedulerLib.FutureTransaction storage pointer"
+                },
+                "id": 344,
+                "name": "UserDefinedTypeName",
+                "src": "327:30:3"
+              }
+            ],
+            "id": 345,
+            "name": "UsingForDirective",
+            "src": "304:54:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "factoryAddress",
+              "scope": 399,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 346,
+                "name": "ElementaryTypeName",
+                "src": "442:7:3"
+              }
+            ],
+            "id": 347,
+            "name": "VariableDeclaration",
+            "src": "442:29:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "temporalUnit",
+              "scope": 399,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "enum RequestScheduleLib.TemporalUnit",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "RequestScheduleLib.TemporalUnit",
+                  "referencedDeclaration": 4650,
+                  "type": "enum RequestScheduleLib.TemporalUnit"
+                },
+                "id": 348,
+                "name": "UserDefinedTypeName",
+                "src": "525:31:3"
+              }
+            ],
+            "id": 349,
+            "name": "VariableDeclaration",
+            "src": "525:51:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "futureTransaction",
+              "scope": 399,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct SchedulerLib.FutureTransaction storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SchedulerLib.FutureTransaction",
+                  "referencedDeclaration": 5051,
+                  "type": "struct SchedulerLib.FutureTransaction storage pointer"
+                },
+                "id": 350,
+                "name": "UserDefinedTypeName",
+                "src": "686:30:3"
+              }
+            ],
+            "id": 351,
+            "name": "VariableDeclaration",
+            "src": "686:55:3"
+          },
+          {
+            "attributes": {
+              "name": "doReset",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 352,
+                "name": "ParameterList",
+                "src": "910:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_enum$_TemporalUnit_$4650",
+                            "typeString": "enum RequestScheduleLib.TemporalUnit"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 349,
+                              "type": "enum RequestScheduleLib.TemporalUnit",
+                              "value": "temporalUnit"
+                            },
+                            "id": 353,
+                            "name": "Identifier",
+                            "src": "924:12:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "Blocks",
+                              "referencedDeclaration": null,
+                              "type": "enum RequestScheduleLib.TemporalUnit"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "TemporalUnit",
+                                  "referencedDeclaration": 4650,
+                                  "type": "type(enum RequestScheduleLib.TemporalUnit)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 5008,
+                                      "type": "type(library RequestScheduleLib)",
+                                      "value": "RequestScheduleLib"
+                                    },
+                                    "id": 354,
+                                    "name": "Identifier",
+                                    "src": "940:18:3"
+                                  }
+                                ],
+                                "id": 355,
+                                "name": "MemberAccess",
+                                "src": "940:31:3"
+                              }
+                            ],
+                            "id": 356,
+                            "name": "MemberAccess",
+                            "src": "940:38:3"
+                          }
+                        ],
+                        "id": 357,
+                        "name": "BinaryOperation",
+                        "src": "924:54:3"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "arguments": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "bool",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        null
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "resetAsBlock",
+                                      "referencedDeclaration": 5258,
+                                      "type": "function (struct SchedulerLib.FutureTransaction storage pointer) returns (bool)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 351,
+                                          "type": "struct SchedulerLib.FutureTransaction storage ref",
+                                          "value": "futureTransaction"
+                                        },
+                                        "id": 358,
+                                        "name": "Identifier",
+                                        "src": "994:17:3"
+                                      }
+                                    ],
+                                    "id": 360,
+                                    "name": "MemberAccess",
+                                    "src": "994:30:3"
+                                  }
+                                ],
+                                "id": 361,
+                                "name": "FunctionCall",
+                                "src": "994:32:3"
+                              }
+                            ],
+                            "id": 362,
+                            "name": "ExpressionStatement",
+                            "src": "994:32:3"
+                          }
+                        ],
+                        "id": 363,
+                        "name": "Block",
+                        "src": "980:57:3"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_enum$_TemporalUnit_$4650",
+                                "typeString": "enum RequestScheduleLib.TemporalUnit"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 349,
+                                  "type": "enum RequestScheduleLib.TemporalUnit",
+                                  "value": "temporalUnit"
+                                },
+                                "id": 364,
+                                "name": "Identifier",
+                                "src": "1047:12:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Timestamp",
+                                  "referencedDeclaration": null,
+                                  "type": "enum RequestScheduleLib.TemporalUnit"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "TemporalUnit",
+                                      "referencedDeclaration": 4650,
+                                      "type": "type(enum RequestScheduleLib.TemporalUnit)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 5008,
+                                          "type": "type(library RequestScheduleLib)",
+                                          "value": "RequestScheduleLib"
+                                        },
+                                        "id": 365,
+                                        "name": "Identifier",
+                                        "src": "1063:18:3"
+                                      }
+                                    ],
+                                    "id": 366,
+                                    "name": "MemberAccess",
+                                    "src": "1063:31:3"
+                                  }
+                                ],
+                                "id": 367,
+                                "name": "MemberAccess",
+                                "src": "1063:41:3"
+                              }
+                            ],
+                            "id": 368,
+                            "name": "BinaryOperation",
+                            "src": "1047:57:3"
+                          },
+                          {
+                            "children": [
+                              {
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "arguments": [
+                                        null
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "isStructConstructorCall": false,
+                                      "lValueRequested": false,
+                                      "names": [
+                                        null
+                                      ],
+                                      "type": "bool",
+                                      "type_conversion": false
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": [
+                                            null
+                                          ],
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "member_name": "resetAsTimestamp",
+                                          "referencedDeclaration": 5340,
+                                          "type": "function (struct SchedulerLib.FutureTransaction storage pointer) returns (bool)"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 351,
+                                              "type": "struct SchedulerLib.FutureTransaction storage ref",
+                                              "value": "futureTransaction"
+                                            },
+                                            "id": 369,
+                                            "name": "Identifier",
+                                            "src": "1120:17:3"
+                                          }
+                                        ],
+                                        "id": 371,
+                                        "name": "MemberAccess",
+                                        "src": "1120:34:3"
+                                      }
+                                    ],
+                                    "id": 372,
+                                    "name": "FunctionCall",
+                                    "src": "1120:36:3"
+                                  }
+                                ],
+                                "id": 373,
+                                "name": "ExpressionStatement",
+                                "src": "1120:36:3"
+                              }
+                            ],
+                            "id": 374,
+                            "name": "Block",
+                            "src": "1106:61:3"
+                          },
+                          {
+                            "children": [
+                              {
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "arguments": [
+                                        null
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "isStructConstructorCall": false,
+                                      "lValueRequested": false,
+                                      "names": [
+                                        null
+                                      ],
+                                      "type": "tuple()",
+                                      "type_conversion": false
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": [
+                                            null
+                                          ],
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 6815,
+                                          "type": "function () pure",
+                                          "value": "revert"
+                                        },
+                                        "id": 375,
+                                        "name": "Identifier",
+                                        "src": "1187:6:3"
+                                      }
+                                    ],
+                                    "id": 376,
+                                    "name": "FunctionCall",
+                                    "src": "1187:8:3"
+                                  }
+                                ],
+                                "id": 377,
+                                "name": "ExpressionStatement",
+                                "src": "1187:8:3"
+                              }
+                            ],
+                            "id": 378,
+                            "name": "Block",
+                            "src": "1173:33:3"
+                          }
+                        ],
+                        "id": 379,
+                        "name": "IfStatement",
+                        "src": "1043:163:3"
+                      }
+                    ],
+                    "id": 380,
+                    "name": "IfStatement",
+                    "src": "920:286:3"
+                  },
+                  {
+                    "id": 381,
+                    "name": "PlaceholderStatement",
+                    "src": "1215:1:3"
+                  }
+                ],
+                "id": 382,
+                "name": "Block",
+                "src": "910:313:3"
+              }
+            ],
+            "id": 383,
+            "name": "ModifierDefinition",
+            "src": "893:330:3"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "constant": false,
+              "implemented": false,
+              "isConstructor": false,
+              "name": "schedule",
+              "payable": true,
+              "scope": 399,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_toAddress",
+                      "scope": 398,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 384,
+                        "name": "ElementaryTypeName",
+                        "src": "1255:7:3"
+                      }
+                    ],
+                    "id": 385,
+                    "name": "VariableDeclaration",
+                    "src": "1255:20:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_callData",
+                      "scope": 398,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes storage pointer"
+                        },
+                        "id": 386,
+                        "name": "ElementaryTypeName",
+                        "src": "1299:5:3"
+                      }
+                    ],
+                    "id": 387,
+                    "name": "VariableDeclaration",
+                    "src": "1299:19:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_uintArgs",
+                      "scope": 398,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256[8] memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "uint256[8] storage pointer"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint",
+                              "type": "uint256"
+                            },
+                            "id": 388,
+                            "name": "ElementaryTypeName",
+                            "src": "1342:4:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "38",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 8",
+                              "value": "8"
+                            },
+                            "id": 389,
+                            "name": "Literal",
+                            "src": "1347:1:3"
+                          }
+                        ],
+                        "id": 390,
+                        "name": "ArrayTypeName",
+                        "src": "1342:7:3"
+                      }
+                    ],
+                    "id": 391,
+                    "name": "VariableDeclaration",
+                    "src": "1342:19:3"
+                  }
+                ],
+                "id": 392,
+                "name": "ParameterList",
+                "src": "1254:108:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 398,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 395,
+                        "name": "ElementaryTypeName",
+                        "src": "1411:7:3"
+                      }
+                    ],
+                    "id": 396,
+                    "name": "VariableDeclaration",
+                    "src": "1411:7:3"
+                  }
+                ],
+                "id": 397,
+                "name": "ParameterList",
+                "src": "1410:9:3"
+              },
+              {
+                "attributes": {
+                  "arguments": [
+                    null
+                  ]
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 383,
+                      "type": "modifier ()",
+                      "value": "doReset"
+                    },
+                    "id": 393,
+                    "name": "Identifier",
+                    "src": "1371:7:3"
+                  }
+                ],
+                "id": 394,
+                "name": "ModifierInvocation",
+                "src": "1371:7:3"
+              }
+            ],
+            "id": 398,
+            "name": "FunctionDefinition",
+            "src": "1237:183:3"
+          }
+        ],
+        "id": 399,
+        "name": "ContractDefinition",
+        "src": "270:1153:3"
+      }
+    ],
+    "id": 400,
+    "name": "SourceUnit",
+    "src": "0:1424:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-26T00:22:48.732Z"
+}

@@ -1,10 +1,11 @@
 pragma solidity ^0.4.18;
 
-import "../lib/ethereum-alarm-clock/contracts/Interface/SchedulerInterface.sol";
-import "../lib/ethereum-alarm-clock/contracts/Interface/TransactionRequestInterface.sol";
+import "./EAC/Interface/SchedulerInterface.sol";
+import "./EAC/Interface/TransactionRequestInterface.sol";
+
 /**
  * @title Ethereum Alarm Clock Canary 0.9.0
- * @dev Based on the original canary code 
+ * @dev Based on the original canary code by Piper Merriam:
  * http://blog.ethereum-alarm-clock.com/blog/2015/12/25/say-hello-to-the-reliability-canary
  */
 contract Canary {
@@ -16,7 +17,7 @@ contract Canary {
 
     address public owner;
 
-    function Canary(address _scheduler) {
+    function Canary(address _scheduler) public {
         owner = msg.sender;
         scheduler = SchedulerInterface(_scheduler);
     }
@@ -24,56 +25,74 @@ contract Canary {
     function ()
         public payable
     {
-        //thanks for funding the canary!
+        require(isAlive());
+        // Thanks for funding the canary!
     }
 
     function initialize()
-        public
+        public payable
     {
         require(msg.sender == owner);
         require(initializedAt == 0);
-        require(this.balance >= 1 ether);
+        require(msg.value >= 1 ether);
         initializedAt = block.timestamp;
-        scheduleHeartbeat();
+        lastHeartbeat = block.timestamp;
+        require( this.scheduleHeartbeat(32 finney) );
+        // The endowment is roughly 32 finney.
     }
 
-    function scheduleHeartbeat()
-        internal
+    /**
+     * This function must be external because we recontextualize the calls
+     * so that msg.sender is the address of this contract and not the address of
+     * the calling address (owner in initialize, txRequest in heartbeat)
+     */
+    function scheduleHeartbeat(uint _value)
+        external returns (bool)
     {
-        address newTxRequest = scheduler.schedule.value(1 ether)(
+        require(msg.sender == address(this));
+
+        address newTxRequest = scheduler.schedule.value(_value)(
             address(this),
-            bytes4(keccak256("heartbeat()")),
+            hex"3defb962",                  // bytes4(sha3("heartbeat()"))
             [
-                2000000,
+                3000000,
                 0,
                 1 hours,
                 block.timestamp + 2 hours,
-                30000000000 wei,            // 30 gwei
+                10000000000 wei,            // 10 gwei
                 0,
                 300 wei,
                 1 wei
             ]
         );
-        txRequest = TransactionRequestInterface(nexTxRequest);
+        txRequest = TransactionRequestInterface(newTxRequest);
+        return true;
     }
 
     function heartbeat()
-        public 
+        public payable
     {
         // Only the scheduled tranasaction is allowed to be called.
         require(msg.sender == address(txRequest));
         require(isAlive());
-        scheduleHeartbeat();
+        require( this.scheduleHeartbeat(32 finney) );
 
         lastHeartbeat = block.timestamp;
         heartbeatCount++;
     }
 
     function isAlive()
-        view returns (bool)
+        public view returns (bool)
     {
         require(initializedAt > 0);
-        return lastHeartbeat + 3 hours < block.timestamp;
+        return lastHeartbeat + 3 hours >= block.timestamp;
     }
 
+    function decomission()
+        public returns (bool)
+    {
+        require(msg.sender == owner);
+        initializedAt = 0;  // isAlive() will return false
+        owner.transfer(this.balance);
+    }
 }

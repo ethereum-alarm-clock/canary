@@ -1,0 +1,21 @@
+{
+  "name": "eac-canary",
+  "version": "1.0.0",
+  "description": "Canary contract for determining the liveness of the EAC.",
+  "main": "truffle-config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test"
+  },
+  "author": "lsaether",
+  "license": "MIT",
+  "dependencies": {
+    "@digix/tempo": "^0.2.0",
+    "chai": "^4.1.2",
+    "eac.js": "^1.0.0-rc.2",
+    "web3": "^0.20.4"
+  }
+}

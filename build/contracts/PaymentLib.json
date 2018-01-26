@@ -1,0 +1,3076 @@
+{
+  "contractName": "PaymentLib",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_endowment",
+          "type": "uint256"
+        },
+        {
+          "name": "_payment",
+          "type": "uint256"
+        },
+        {
+          "name": "_donation",
+          "type": "uint256"
+        },
+        {
+          "name": "_callGas",
+          "type": "uint256"
+        },
+        {
+          "name": "_callValue",
+          "type": "uint256"
+        },
+        {
+          "name": "_gasPrice",
+          "type": "uint256"
+        },
+        {
+          "name": "_gasOverhead",
+          "type": "uint256"
+        }
+      ],
+      "name": "validateEndowment",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_payment",
+          "type": "uint256"
+        },
+        {
+          "name": "_donation",
+          "type": "uint256"
+        },
+        {
+          "name": "_callGas",
+          "type": "uint256"
+        },
+        {
+          "name": "_callValue",
+          "type": "uint256"
+        },
+        {
+          "name": "_gasPrice",
+          "type": "uint256"
+        },
+        {
+          "name": "_gasOverhead",
+          "type": "uint256"
+        }
+      ],
+      "name": "computeEndowment",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b6102418061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806327960c5f146100515780635ee345e4146100b7575b600080fd5b61009d6004808035906020019091908035906020019091908035906020019091908035906020019091908035906020019091908035906020019091908035906020019091905050610110565b604051808215151515815260200191505060405180910390f35b6100fa6004808035906020019091908035906020019091908035906020019091908035906020019091908035906020019091908035906020019091905050610130565b6040518082815260200191505060405180910390f35b6000610120878787878787610130565b8810159050979650505050505050565b60006101b2846101a461014c86866101be90919063ffffffff16565b610196610162888b6101be90919063ffffffff16565b61018861017960028e6101be90919063ffffffff16565b8e6101f490919063ffffffff16565b6101f490919063ffffffff16565b6101f490919063ffffffff16565b6101f490919063ffffffff16565b90509695505050505050565b600080828402905060008414806101df57508284828115156101dc57fe5b04145b15156101ea57600080fd5b8091505092915050565b600080828401905083811015151561020b57600080fd5b80915050929150505600a165627a7a72305820f473107ddb3d9d979004e45cc80f939c0d7a17bbe834e6fe9be0b4dd749cb2420029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806327960c5f146100515780635ee345e4146100b7575b600080fd5b61009d6004808035906020019091908035906020019091908035906020019091908035906020019091908035906020019091908035906020019091908035906020019091905050610110565b604051808215151515815260200191505060405180910390f35b6100fa6004808035906020019091908035906020019091908035906020019091908035906020019091908035906020019091908035906020019091905050610130565b6040518082815260200191505060405180910390f35b6000610120878787878787610130565b8810159050979650505050505050565b60006101b2846101a461014c86866101be90919063ffffffff16565b610196610162888b6101be90919063ffffffff16565b61018861017960028e6101be90919063ffffffff16565b8e6101f490919063ffffffff16565b6101f490919063ffffffff16565b6101f490919063ffffffff16565b6101f490919063ffffffff16565b90509695505050505050565b600080828402905060008414806101df57508284828115156101dc57fe5b04145b15156101ea57600080fd5b8091505092915050565b600080828401905083811015151561020b57600080fd5b80915050929150505600a165627a7a72305820f473107ddb3d9d979004e45cc80f939c0d7a17bbe834e6fe9be0b4dd749cb2420029",
+  "sourceMap": "133:4327:10:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "133:4327:10:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3887:571;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3260:418;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3887:571;4244:4;4285:166;4315:8;4337:9;4360:8;4382:10;4406:9;4429:12;4285:16;:166::i;:::-;4271:10;:180;;4264:187;;3887:571;;;;;;;;;:::o;3260:418::-;3468:4;3495:176;3660:10;3495:143;3610:27;3627:9;3610:12;:16;;:27;;;;:::i;:::-;3495:93;3564:23;3577:9;3564:8;:12;;:23;;;;:::i;:::-;3495:47;3525:16;3539:1;3525:9;:13;;:16;;;;:::i;:::-;3495:8;:29;;:47;;;;:::i;:::-;:68;;:93;;;;:::i;:::-;:114;;:143;;;;:::i;:::-;:164;;:176;;;;:::i;:::-;3488:183;;3260:418;;;;;;;;:::o;138:144:25:-;196:7;211:9;227:1;223;:5;211:17;;247:1;242;:6;:20;;;;261:1;256;252;:5;;;;;;;;:10;242:20;234:29;;;;;;;;276:1;269:8;;138:144;;;;;:::o;672:130::-;730:7;745:9;761:1;757;:5;745:17;;781:1;776;:6;;768:15;;;;;;;;796:1;789:8;;672:130;;;;;:::o",
+  "source": "pragma solidity ^0.4.18;\n\nimport \"../Library/ExecutionLib.sol\";\nimport \"../Library/MathLib.sol\";\nimport \"../zeppelin/SafeMath.sol\";\n\nlibrary PaymentLib {\n    using SafeMath for uint;\n\n    struct PaymentData {\n        uint payment;               /// The amount in wei to be paid to the executor of this TransactionRequest.\n\n        address paymentBenefactor;  /// The address that the payment should be sent to.\n\n        uint paymentOwed;           /// The amount that is owed to the paymentBenefactor.\n\n        uint donation;              /// The amount in wei that will be paid to the donationBenefactor address.\n\n        address donationBenefactor; /// The address that the donation should be sent to.\n\n        uint donationOwed;          /// The amount that is owed to the donationBenefactor.\n    }\n\n    ///---------------\n    /// GETTERS\n    ///---------------\n\n    /**\n     * @dev Getter function that returns true if a request has a benefactor.\n     */\n    function hasBenefactor(PaymentData storage self)\n        internal view returns (bool)\n    {\n        return self.donationBenefactor != 0x0;\n    }\n\n    /**\n     * @dev Computes the amount to send to the donationBenefactor. \n     */\n    function getDonation(PaymentData storage self) \n        internal view returns (uint)\n    {\n        return self.donation;\n    }\n\n    /**\n     * @dev Computes the amount to send to the address that fulfilled the request.\n     */\n    function getPayment(PaymentData storage self)\n        internal view returns (uint)\n    {\n        return self.payment;\n    }\n \n    /**\n     * @dev Computes the amount to send to the address that fulfilled the request\n     *       with an additional modifier. This is used when the call was claimed.\n     */\n    function getPaymentWithModifier(PaymentData storage self,\n                                    uint8 _paymentModifier)\n        internal view returns (uint)\n    {\n        return getPayment(self).mul(_paymentModifier).div(100);\n    }\n\n    ///---------------\n    /// SENDERS\n    ///---------------\n\n    /**\n     * @dev Send the donationOwed amount to the donationBenefactor.\n     * Note: The send is allowed to fail.\n     */\n    function sendDonation(PaymentData storage self) \n        internal returns (bool)\n    {\n        uint donationAmount = self.donationOwed;\n        if (donationAmount > 0) {\n            // re-entrance protection.\n            self.donationOwed = 0;\n            return self.donationBenefactor.send(donationAmount);\n        }\n        return true;\n    }\n\n    /**\n     * @dev Send the paymentOwed amount to the paymentBenefactor.\n     * Note: The send is allowed to fail.\n     */\n    function sendPayment(PaymentData storage self)\n        internal returns (bool)\n    {\n        uint paymentAmount = self.paymentOwed;\n        if (paymentAmount > 0) {\n            // re-entrance protection.\n            self.paymentOwed = 0;\n            return self.paymentBenefactor.send(paymentAmount);\n        }\n        return true;\n    }\n\n    ///---------------\n    /// Endowment\n    ///---------------\n\n    /**\n     * @dev Compute the endowment value for the given TransactionRequest parameters.\n     * See request_factory.rst in docs folder under Check #1 for more information about\n     * this calculation.\n     */\n    function computeEndowment(\n        uint _payment,\n        uint _donation,\n        uint _callGas,\n        uint _callValue,\n        uint _gasPrice,\n        uint _gasOverhead\n    ) \n        public pure returns (uint)\n    {\n        return _payment\n                .add(_donation.mul(2))\n                .add(_callGas.mul(_gasPrice))\n                .add(_gasOverhead.mul(_gasPrice))\n                .add(_callValue);\n    }\n\n    /*\n     * Validation: ensure that the request endowment is sufficient to cover.\n     * - payment * maxMultiplier\n     * - donation * maxMultiplier\n     * - gasReimbursment\n     * - callValue\n     */\n    function validateEndowment(uint _endowment,\n                               uint _payment,\n                               uint _donation,\n                               uint _callGas,\n                               uint _callValue,\n                               uint _gasPrice,\n                               uint _gasOverhead)\n        public pure returns (bool)\n    {\n        return _endowment >= computeEndowment(\n            _payment,\n            _donation,\n            _callGas,\n            _callValue,\n            _gasPrice,\n            _gasOverhead\n        );\n    }\n}\n",
+  "sourcePath": "/home/logan/Work/eac-canary/contracts/EAC/Library/PaymentLib.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/logan/Work/eac-canary/contracts/EAC/Library/PaymentLib.sol",
+      "exportedSymbols": {
+        "PaymentLib": [
+          2715
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".18"
+          ]
+        },
+        "id": 2504,
+        "name": "PragmaDirective",
+        "src": "0:24:10"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 688,
+          "absolutePath": "/home/logan/Work/eac-canary/contracts/EAC/Library/ExecutionLib.sol",
+          "file": "../Library/ExecutionLib.sol",
+          "scope": 2716,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2505,
+        "name": "ImportDirective",
+        "src": "26:37:10"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 2503,
+          "absolutePath": "/home/logan/Work/eac-canary/contracts/EAC/Library/MathLib.sol",
+          "file": "../Library/MathLib.sol",
+          "scope": 2716,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2506,
+        "name": "ImportDirective",
+        "src": "64:32:10"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 6743,
+          "absolutePath": "/home/logan/Work/eac-canary/contracts/EAC/zeppelin/SafeMath.sol",
+          "file": "../zeppelin/SafeMath.sol",
+          "scope": 2716,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2507,
+        "name": "ImportDirective",
+        "src": "97:34:10"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "library",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            2715
+          ],
+          "name": "PaymentLib",
+          "scope": 2716
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "SafeMath",
+                  "referencedDeclaration": 6742,
+                  "type": "library SafeMath"
+                },
+                "id": 2508,
+                "name": "UserDefinedTypeName",
+                "src": "164:8:10"
+              },
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 2509,
+                "name": "ElementaryTypeName",
+                "src": "177:4:10"
+              }
+            ],
+            "id": 2510,
+            "name": "UsingForDirective",
+            "src": "158:24:10"
+          },
+          {
+            "attributes": {
+              "canonicalName": "PaymentLib.PaymentData",
+              "name": "PaymentData",
+              "scope": 2715,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "payment",
+                  "scope": 2523,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 2511,
+                    "name": "ElementaryTypeName",
+                    "src": "217:4:10"
+                  }
+                ],
+                "id": 2512,
+                "name": "VariableDeclaration",
+                "src": "217:12:10"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "paymentBenefactor",
+                  "scope": 2523,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 2513,
+                    "name": "ElementaryTypeName",
+                    "src": "331:7:10"
+                  }
+                ],
+                "id": 2514,
+                "name": "VariableDeclaration",
+                "src": "331:25:10"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "paymentOwed",
+                  "scope": 2523,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 2515,
+                    "name": "ElementaryTypeName",
+                    "src": "420:4:10"
+                  }
+                ],
+                "id": 2516,
+                "name": "VariableDeclaration",
+                "src": "420:16:10"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "donation",
+                  "scope": 2523,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 2517,
+                    "name": "ElementaryTypeName",
+                    "src": "511:4:10"
+                  }
+                ],
+                "id": 2518,
+                "name": "VariableDeclaration",
+                "src": "511:13:10"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "donationBenefactor",
+                  "scope": 2523,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 2519,
+                    "name": "ElementaryTypeName",
+                    "src": "623:7:10"
+                  }
+                ],
+                "id": 2520,
+                "name": "VariableDeclaration",
+                "src": "623:26:10"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "donationOwed",
+                  "scope": 2523,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 2521,
+                    "name": "ElementaryTypeName",
+                    "src": "713:4:10"
+                  }
+                ],
+                "id": 2522,
+                "name": "VariableDeclaration",
+                "src": "713:17:10"
+              }
+            ],
+            "id": 2523,
+            "name": "StructDefinition",
+            "src": "188:613:10"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "hasBenefactor",
+              "payable": false,
+              "scope": 2715,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "self",
+                      "scope": 2536,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct PaymentLib.PaymentData storage pointer",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "PaymentData",
+                          "referencedDeclaration": 2523,
+                          "type": "struct PaymentLib.PaymentData storage pointer"
+                        },
+                        "id": 2524,
+                        "name": "UserDefinedTypeName",
+                        "src": "986:11:10"
+                      }
+                    ],
+                    "id": 2525,
+                    "name": "VariableDeclaration",
+                    "src": "986:24:10"
+                  }
+                ],
+                "id": 2526,
+                "name": "ParameterList",
+                "src": "985:26:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2536,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 2527,
+                        "name": "ElementaryTypeName",
+                        "src": "1043:4:10"
+                      }
+                    ],
+                    "id": 2528,
+                    "name": "VariableDeclaration",
+                    "src": "1043:4:10"
+                  }
+                ],
+                "id": 2529,
+                "name": "ParameterList",
+                "src": "1042:6:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2529
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "donationBenefactor",
+                              "referencedDeclaration": 2520,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2525,
+                                  "type": "struct PaymentLib.PaymentData storage pointer",
+                                  "value": "self"
+                                },
+                                "id": 2530,
+                                "name": "Identifier",
+                                "src": "1070:4:10"
+                              }
+                            ],
+                            "id": 2531,
+                            "name": "MemberAccess",
+                            "src": "1070:23:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "307830",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0x0"
+                            },
+                            "id": 2532,
+                            "name": "Literal",
+                            "src": "1097:3:10"
+                          }
+                        ],
+                        "id": 2533,
+                        "name": "BinaryOperation",
+                        "src": "1070:30:10"
+                      }
+                    ],
+                    "id": 2534,
+                    "name": "Return",
+                    "src": "1063:37:10"
+                  }
+                ],
+                "id": 2535,
+                "name": "Block",
+                "src": "1053:54:10"
+              }
+            ],
+            "id": 2536,
+            "name": "FunctionDefinition",
+            "src": "963:144:10"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getDonation",
+              "payable": false,
+              "scope": 2715,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "self",
+                      "scope": 2547,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct PaymentLib.PaymentData storage pointer",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "PaymentData",
+                          "referencedDeclaration": 2523,
+                          "type": "struct PaymentLib.PaymentData storage pointer"
+                        },
+                        "id": 2537,
+                        "name": "UserDefinedTypeName",
+                        "src": "1218:11:10"
+                      }
+                    ],
+                    "id": 2538,
+                    "name": "VariableDeclaration",
+                    "src": "1218:24:10"
+                  }
+                ],
+                "id": 2539,
+                "name": "ParameterList",
+                "src": "1217:26:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2547,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2540,
+                        "name": "ElementaryTypeName",
+                        "src": "1276:4:10"
+                      }
+                    ],
+                    "id": 2541,
+                    "name": "VariableDeclaration",
+                    "src": "1276:4:10"
+                  }
+                ],
+                "id": 2542,
+                "name": "ParameterList",
+                "src": "1275:6:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2542
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "donation",
+                          "referencedDeclaration": 2518,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2538,
+                              "type": "struct PaymentLib.PaymentData storage pointer",
+                              "value": "self"
+                            },
+                            "id": 2543,
+                            "name": "Identifier",
+                            "src": "1303:4:10"
+                          }
+                        ],
+                        "id": 2544,
+                        "name": "MemberAccess",
+                        "src": "1303:13:10"
+                      }
+                    ],
+                    "id": 2545,
+                    "name": "Return",
+                    "src": "1296:20:10"
+                  }
+                ],
+                "id": 2546,
+                "name": "Block",
+                "src": "1286:37:10"
+              }
+            ],
+            "id": 2547,
+            "name": "FunctionDefinition",
+            "src": "1197:126:10"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getPayment",
+              "payable": false,
+              "scope": 2715,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "self",
+                      "scope": 2558,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct PaymentLib.PaymentData storage pointer",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "PaymentData",
+                          "referencedDeclaration": 2523,
+                          "type": "struct PaymentLib.PaymentData storage pointer"
+                        },
+                        "id": 2548,
+                        "name": "UserDefinedTypeName",
+                        "src": "1448:11:10"
+                      }
+                    ],
+                    "id": 2549,
+                    "name": "VariableDeclaration",
+                    "src": "1448:24:10"
+                  }
+                ],
+                "id": 2550,
+                "name": "ParameterList",
+                "src": "1447:26:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2558,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2551,
+                        "name": "ElementaryTypeName",
+                        "src": "1505:4:10"
+                      }
+                    ],
+                    "id": 2552,
+                    "name": "VariableDeclaration",
+                    "src": "1505:4:10"
+                  }
+                ],
+                "id": 2553,
+                "name": "ParameterList",
+                "src": "1504:6:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2553
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "payment",
+                          "referencedDeclaration": 2512,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2549,
+                              "type": "struct PaymentLib.PaymentData storage pointer",
+                              "value": "self"
+                            },
+                            "id": 2554,
+                            "name": "Identifier",
+                            "src": "1532:4:10"
+                          }
+                        ],
+                        "id": 2555,
+                        "name": "MemberAccess",
+                        "src": "1532:12:10"
+                      }
+                    ],
+                    "id": 2556,
+                    "name": "Return",
+                    "src": "1525:19:10"
+                  }
+                ],
+                "id": 2557,
+                "name": "Block",
+                "src": "1515:36:10"
+              }
+            ],
+            "id": 2558,
+            "name": "FunctionDefinition",
+            "src": "1428:123:10"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getPaymentWithModifier",
+              "payable": false,
+              "scope": 2715,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "self",
+                      "scope": 2578,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct PaymentLib.PaymentData storage pointer",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "PaymentData",
+                          "referencedDeclaration": 2523,
+                          "type": "struct PaymentLib.PaymentData storage pointer"
+                        },
+                        "id": 2559,
+                        "name": "UserDefinedTypeName",
+                        "src": "1770:11:10"
+                      }
+                    ],
+                    "id": 2560,
+                    "name": "VariableDeclaration",
+                    "src": "1770:24:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_paymentModifier",
+                      "scope": 2578,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 2561,
+                        "name": "ElementaryTypeName",
+                        "src": "1832:5:10"
+                      }
+                    ],
+                    "id": 2562,
+                    "name": "VariableDeclaration",
+                    "src": "1832:22:10"
+                  }
+                ],
+                "id": 2563,
+                "name": "ParameterList",
+                "src": "1769:86:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2578,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2564,
+                        "name": "ElementaryTypeName",
+                        "src": "1887:4:10"
+                      }
+                    ],
+                    "id": 2565,
+                    "name": "VariableDeclaration",
+                    "src": "1887:4:10"
+                  }
+                ],
+                "id": 2566,
+                "name": "ParameterList",
+                "src": "1886:6:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2566
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_rational_100_by_1",
+                                  "typeString": "int_const 100"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "div",
+                              "referencedDeclaration": 6697,
+                              "type": "function (uint256,uint256) pure returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "uint256",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_uint8",
+                                          "typeString": "uint8"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "mul",
+                                      "referencedDeclaration": 6679,
+                                      "type": "function (uint256,uint256) pure returns (uint256)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "isStructConstructorCall": false,
+                                          "lValueRequested": false,
+                                          "names": [
+                                            null
+                                          ],
+                                          "type": "uint256",
+                                          "type_conversion": false
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": [
+                                                {
+                                                  "typeIdentifier": "t_struct$_PaymentData_$2523_storage_ptr",
+                                                  "typeString": "struct PaymentLib.PaymentData storage pointer"
+                                                }
+                                              ],
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 2558,
+                                              "type": "function (struct PaymentLib.PaymentData storage pointer) view returns (uint256)",
+                                              "value": "getPayment"
+                                            },
+                                            "id": 2567,
+                                            "name": "Identifier",
+                                            "src": "1914:10:10"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 2560,
+                                              "type": "struct PaymentLib.PaymentData storage pointer",
+                                              "value": "self"
+                                            },
+                                            "id": 2568,
+                                            "name": "Identifier",
+                                            "src": "1925:4:10"
+                                          }
+                                        ],
+                                        "id": 2569,
+                                        "name": "FunctionCall",
+                                        "src": "1914:16:10"
+                                      }
+                                    ],
+                                    "id": 2570,
+                                    "name": "MemberAccess",
+                                    "src": "1914:20:10"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 2562,
+                                      "type": "uint8",
+                                      "value": "_paymentModifier"
+                                    },
+                                    "id": 2571,
+                                    "name": "Identifier",
+                                    "src": "1935:16:10"
+                                  }
+                                ],
+                                "id": 2572,
+                                "name": "FunctionCall",
+                                "src": "1914:38:10"
+                              }
+                            ],
+                            "id": 2573,
+                            "name": "MemberAccess",
+                            "src": "1914:42:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "313030",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 100",
+                              "value": "100"
+                            },
+                            "id": 2574,
+                            "name": "Literal",
+                            "src": "1957:3:10"
+                          }
+                        ],
+                        "id": 2575,
+                        "name": "FunctionCall",
+                        "src": "1914:47:10"
+                      }
+                    ],
+                    "id": 2576,
+                    "name": "Return",
+                    "src": "1907:54:10"
+                  }
+                ],
+                "id": 2577,
+                "name": "Block",
+                "src": "1897:71:10"
+              }
+            ],
+            "id": 2578,
+            "name": "FunctionDefinition",
+            "src": "1738:230:10"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "sendDonation",
+              "payable": false,
+              "scope": 2715,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "self",
+                      "scope": 2610,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct PaymentLib.PaymentData storage pointer",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "PaymentData",
+                          "referencedDeclaration": 2523,
+                          "type": "struct PaymentLib.PaymentData storage pointer"
+                        },
+                        "id": 2579,
+                        "name": "UserDefinedTypeName",
+                        "src": "2185:11:10"
+                      }
+                    ],
+                    "id": 2580,
+                    "name": "VariableDeclaration",
+                    "src": "2185:24:10"
+                  }
+                ],
+                "id": 2581,
+                "name": "ParameterList",
+                "src": "2184:26:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2610,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 2582,
+                        "name": "ElementaryTypeName",
+                        "src": "2238:4:10"
+                      }
+                    ],
+                    "id": 2583,
+                    "name": "VariableDeclaration",
+                    "src": "2238:4:10"
+                  }
+                ],
+                "id": 2584,
+                "name": "ParameterList",
+                "src": "2237:6:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        2586
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "donationAmount",
+                          "scope": 2610,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint",
+                              "type": "uint256"
+                            },
+                            "id": 2585,
+                            "name": "ElementaryTypeName",
+                            "src": "2258:4:10"
+                          }
+                        ],
+                        "id": 2586,
+                        "name": "VariableDeclaration",
+                        "src": "2258:19:10"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "donationOwed",
+                          "referencedDeclaration": 2522,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2580,
+                              "type": "struct PaymentLib.PaymentData storage pointer",
+                              "value": "self"
+                            },
+                            "id": 2587,
+                            "name": "Identifier",
+                            "src": "2280:4:10"
+                          }
+                        ],
+                        "id": 2588,
+                        "name": "MemberAccess",
+                        "src": "2280:17:10"
+                      }
+                    ],
+                    "id": 2589,
+                    "name": "VariableDeclarationStatement",
+                    "src": "2258:39:10"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": ">",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2586,
+                              "type": "uint256",
+                              "value": "donationAmount"
+                            },
+                            "id": 2590,
+                            "name": "Identifier",
+                            "src": "2311:14:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 2591,
+                            "name": "Literal",
+                            "src": "2328:1:10"
+                          }
+                        ],
+                        "id": 2592,
+                        "name": "BinaryOperation",
+                        "src": "2311:18:10"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": true,
+                                      "member_name": "donationOwed",
+                                      "referencedDeclaration": 2522,
+                                      "type": "uint256"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 2580,
+                                          "type": "struct PaymentLib.PaymentData storage pointer",
+                                          "value": "self"
+                                        },
+                                        "id": 2593,
+                                        "name": "Identifier",
+                                        "src": "2384:4:10"
+                                      }
+                                    ],
+                                    "id": 2595,
+                                    "name": "MemberAccess",
+                                    "src": "2384:17:10"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 2596,
+                                    "name": "Literal",
+                                    "src": "2404:1:10"
+                                  }
+                                ],
+                                "id": 2597,
+                                "name": "Assignment",
+                                "src": "2384:21:10"
+                              }
+                            ],
+                            "id": 2598,
+                            "name": "ExpressionStatement",
+                            "src": "2384:21:10"
+                          },
+                          {
+                            "attributes": {
+                              "functionReturnParameters": 2584
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "bool",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_uint256",
+                                          "typeString": "uint256"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "send",
+                                      "referencedDeclaration": null,
+                                      "type": "function (uint256) returns (bool)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "member_name": "donationBenefactor",
+                                          "referencedDeclaration": 2520,
+                                          "type": "address"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 2580,
+                                              "type": "struct PaymentLib.PaymentData storage pointer",
+                                              "value": "self"
+                                            },
+                                            "id": 2599,
+                                            "name": "Identifier",
+                                            "src": "2426:4:10"
+                                          }
+                                        ],
+                                        "id": 2600,
+                                        "name": "MemberAccess",
+                                        "src": "2426:23:10"
+                                      }
+                                    ],
+                                    "id": 2601,
+                                    "name": "MemberAccess",
+                                    "src": "2426:28:10"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 2586,
+                                      "type": "uint256",
+                                      "value": "donationAmount"
+                                    },
+                                    "id": 2602,
+                                    "name": "Identifier",
+                                    "src": "2455:14:10"
+                                  }
+                                ],
+                                "id": 2603,
+                                "name": "FunctionCall",
+                                "src": "2426:44:10"
+                              }
+                            ],
+                            "id": 2604,
+                            "name": "Return",
+                            "src": "2419:51:10"
+                          }
+                        ],
+                        "id": 2605,
+                        "name": "Block",
+                        "src": "2331:150:10"
+                      }
+                    ],
+                    "id": 2606,
+                    "name": "IfStatement",
+                    "src": "2307:174:10"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2584
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 2607,
+                        "name": "Literal",
+                        "src": "2497:4:10"
+                      }
+                    ],
+                    "id": 2608,
+                    "name": "Return",
+                    "src": "2490:11:10"
+                  }
+                ],
+                "id": 2609,
+                "name": "Block",
+                "src": "2248:260:10"
+              }
+            ],
+            "id": 2610,
+            "name": "FunctionDefinition",
+            "src": "2163:345:10"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "sendPayment",
+              "payable": false,
+              "scope": 2715,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "self",
+                      "scope": 2642,
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "type": "struct PaymentLib.PaymentData storage pointer",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "PaymentData",
+                          "referencedDeclaration": 2523,
+                          "type": "struct PaymentLib.PaymentData storage pointer"
+                        },
+                        "id": 2611,
+                        "name": "UserDefinedTypeName",
+                        "src": "2659:11:10"
+                      }
+                    ],
+                    "id": 2612,
+                    "name": "VariableDeclaration",
+                    "src": "2659:24:10"
+                  }
+                ],
+                "id": 2613,
+                "name": "ParameterList",
+                "src": "2658:26:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2642,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 2614,
+                        "name": "ElementaryTypeName",
+                        "src": "2711:4:10"
+                      }
+                    ],
+                    "id": 2615,
+                    "name": "VariableDeclaration",
+                    "src": "2711:4:10"
+                  }
+                ],
+                "id": 2616,
+                "name": "ParameterList",
+                "src": "2710:6:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        2618
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "paymentAmount",
+                          "scope": 2642,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint",
+                              "type": "uint256"
+                            },
+                            "id": 2617,
+                            "name": "ElementaryTypeName",
+                            "src": "2731:4:10"
+                          }
+                        ],
+                        "id": 2618,
+                        "name": "VariableDeclaration",
+                        "src": "2731:18:10"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "paymentOwed",
+                          "referencedDeclaration": 2516,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2612,
+                              "type": "struct PaymentLib.PaymentData storage pointer",
+                              "value": "self"
+                            },
+                            "id": 2619,
+                            "name": "Identifier",
+                            "src": "2752:4:10"
+                          }
+                        ],
+                        "id": 2620,
+                        "name": "MemberAccess",
+                        "src": "2752:16:10"
+                      }
+                    ],
+                    "id": 2621,
+                    "name": "VariableDeclarationStatement",
+                    "src": "2731:37:10"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": ">",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2618,
+                              "type": "uint256",
+                              "value": "paymentAmount"
+                            },
+                            "id": 2622,
+                            "name": "Identifier",
+                            "src": "2782:13:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 2623,
+                            "name": "Literal",
+                            "src": "2798:1:10"
+                          }
+                        ],
+                        "id": 2624,
+                        "name": "BinaryOperation",
+                        "src": "2782:17:10"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "=",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": true,
+                                      "member_name": "paymentOwed",
+                                      "referencedDeclaration": 2516,
+                                      "type": "uint256"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 2612,
+                                          "type": "struct PaymentLib.PaymentData storage pointer",
+                                          "value": "self"
+                                        },
+                                        "id": 2625,
+                                        "name": "Identifier",
+                                        "src": "2854:4:10"
+                                      }
+                                    ],
+                                    "id": 2627,
+                                    "name": "MemberAccess",
+                                    "src": "2854:16:10"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 2628,
+                                    "name": "Literal",
+                                    "src": "2873:1:10"
+                                  }
+                                ],
+                                "id": 2629,
+                                "name": "Assignment",
+                                "src": "2854:20:10"
+                              }
+                            ],
+                            "id": 2630,
+                            "name": "ExpressionStatement",
+                            "src": "2854:20:10"
+                          },
+                          {
+                            "attributes": {
+                              "functionReturnParameters": 2616
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "bool",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_uint256",
+                                          "typeString": "uint256"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "send",
+                                      "referencedDeclaration": null,
+                                      "type": "function (uint256) returns (bool)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "member_name": "paymentBenefactor",
+                                          "referencedDeclaration": 2514,
+                                          "type": "address"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 2612,
+                                              "type": "struct PaymentLib.PaymentData storage pointer",
+                                              "value": "self"
+                                            },
+                                            "id": 2631,
+                                            "name": "Identifier",
+                                            "src": "2895:4:10"
+                                          }
+                                        ],
+                                        "id": 2632,
+                                        "name": "MemberAccess",
+                                        "src": "2895:22:10"
+                                      }
+                                    ],
+                                    "id": 2633,
+                                    "name": "MemberAccess",
+                                    "src": "2895:27:10"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 2618,
+                                      "type": "uint256",
+                                      "value": "paymentAmount"
+                                    },
+                                    "id": 2634,
+                                    "name": "Identifier",
+                                    "src": "2923:13:10"
+                                  }
+                                ],
+                                "id": 2635,
+                                "name": "FunctionCall",
+                                "src": "2895:42:10"
+                              }
+                            ],
+                            "id": 2636,
+                            "name": "Return",
+                            "src": "2888:49:10"
+                          }
+                        ],
+                        "id": 2637,
+                        "name": "Block",
+                        "src": "2801:147:10"
+                      }
+                    ],
+                    "id": 2638,
+                    "name": "IfStatement",
+                    "src": "2778:170:10"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2616
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 2639,
+                        "name": "Literal",
+                        "src": "2964:4:10"
+                      }
+                    ],
+                    "id": 2640,
+                    "name": "Return",
+                    "src": "2957:11:10"
+                  }
+                ],
+                "id": 2641,
+                "name": "Block",
+                "src": "2721:254:10"
+              }
+            ],
+            "id": 2642,
+            "name": "FunctionDefinition",
+            "src": "2638:337:10"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "computeEndowment",
+              "payable": false,
+              "scope": 2715,
+              "stateMutability": "pure",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_payment",
+                      "scope": 2683,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2643,
+                        "name": "ElementaryTypeName",
+                        "src": "3295:4:10"
+                      }
+                    ],
+                    "id": 2644,
+                    "name": "VariableDeclaration",
+                    "src": "3295:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_donation",
+                      "scope": 2683,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2645,
+                        "name": "ElementaryTypeName",
+                        "src": "3318:4:10"
+                      }
+                    ],
+                    "id": 2646,
+                    "name": "VariableDeclaration",
+                    "src": "3318:14:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_callGas",
+                      "scope": 2683,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2647,
+                        "name": "ElementaryTypeName",
+                        "src": "3342:4:10"
+                      }
+                    ],
+                    "id": 2648,
+                    "name": "VariableDeclaration",
+                    "src": "3342:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_callValue",
+                      "scope": 2683,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2649,
+                        "name": "ElementaryTypeName",
+                        "src": "3365:4:10"
+                      }
+                    ],
+                    "id": 2650,
+                    "name": "VariableDeclaration",
+                    "src": "3365:15:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_gasPrice",
+                      "scope": 2683,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2651,
+                        "name": "ElementaryTypeName",
+                        "src": "3390:4:10"
+                      }
+                    ],
+                    "id": 2652,
+                    "name": "VariableDeclaration",
+                    "src": "3390:14:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_gasOverhead",
+                      "scope": 2683,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2653,
+                        "name": "ElementaryTypeName",
+                        "src": "3414:4:10"
+                      }
+                    ],
+                    "id": 2654,
+                    "name": "VariableDeclaration",
+                    "src": "3414:17:10"
+                  }
+                ],
+                "id": 2655,
+                "name": "ParameterList",
+                "src": "3285:152:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2683,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2656,
+                        "name": "ElementaryTypeName",
+                        "src": "3468:4:10"
+                      }
+                    ],
+                    "id": 2657,
+                    "name": "VariableDeclaration",
+                    "src": "3468:4:10"
+                  }
+                ],
+                "id": 2658,
+                "name": "ParameterList",
+                "src": "3467:6:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2658
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "add",
+                              "referencedDeclaration": 6741,
+                              "type": "function (uint256,uint256) pure returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "uint256",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_uint256",
+                                          "typeString": "uint256"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "add",
+                                      "referencedDeclaration": 6741,
+                                      "type": "function (uint256,uint256) pure returns (uint256)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "isStructConstructorCall": false,
+                                          "lValueRequested": false,
+                                          "names": [
+                                            null
+                                          ],
+                                          "type": "uint256",
+                                          "type_conversion": false
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": [
+                                                {
+                                                  "typeIdentifier": "t_uint256",
+                                                  "typeString": "uint256"
+                                                }
+                                              ],
+                                              "isConstant": false,
+                                              "isLValue": false,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "member_name": "add",
+                                              "referencedDeclaration": 6741,
+                                              "type": "function (uint256,uint256) pure returns (uint256)"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "isConstant": false,
+                                                  "isLValue": false,
+                                                  "isPure": false,
+                                                  "isStructConstructorCall": false,
+                                                  "lValueRequested": false,
+                                                  "names": [
+                                                    null
+                                                  ],
+                                                  "type": "uint256",
+                                                  "type_conversion": false
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": [
+                                                        {
+                                                          "typeIdentifier": "t_uint256",
+                                                          "typeString": "uint256"
+                                                        }
+                                                      ],
+                                                      "isConstant": false,
+                                                      "isLValue": false,
+                                                      "isPure": false,
+                                                      "lValueRequested": false,
+                                                      "member_name": "add",
+                                                      "referencedDeclaration": 6741,
+                                                      "type": "function (uint256,uint256) pure returns (uint256)"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "attributes": {
+                                                          "argumentTypes": null,
+                                                          "overloadedDeclarations": [
+                                                            null
+                                                          ],
+                                                          "referencedDeclaration": 2644,
+                                                          "type": "uint256",
+                                                          "value": "_payment"
+                                                        },
+                                                        "id": 2659,
+                                                        "name": "Identifier",
+                                                        "src": "3495:8:10"
+                                                      }
+                                                    ],
+                                                    "id": 2660,
+                                                    "name": "MemberAccess",
+                                                    "src": "3495:29:10"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "isConstant": false,
+                                                      "isLValue": false,
+                                                      "isPure": false,
+                                                      "isStructConstructorCall": false,
+                                                      "lValueRequested": false,
+                                                      "names": [
+                                                        null
+                                                      ],
+                                                      "type": "uint256",
+                                                      "type_conversion": false
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "attributes": {
+                                                          "argumentTypes": [
+                                                            {
+                                                              "typeIdentifier": "t_rational_2_by_1",
+                                                              "typeString": "int_const 2"
+                                                            }
+                                                          ],
+                                                          "isConstant": false,
+                                                          "isLValue": false,
+                                                          "isPure": false,
+                                                          "lValueRequested": false,
+                                                          "member_name": "mul",
+                                                          "referencedDeclaration": 6679,
+                                                          "type": "function (uint256,uint256) pure returns (uint256)"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "attributes": {
+                                                              "argumentTypes": null,
+                                                              "overloadedDeclarations": [
+                                                                null
+                                                              ],
+                                                              "referencedDeclaration": 2646,
+                                                              "type": "uint256",
+                                                              "value": "_donation"
+                                                            },
+                                                            "id": 2661,
+                                                            "name": "Identifier",
+                                                            "src": "3525:9:10"
+                                                          }
+                                                        ],
+                                                        "id": 2662,
+                                                        "name": "MemberAccess",
+                                                        "src": "3525:13:10"
+                                                      },
+                                                      {
+                                                        "attributes": {
+                                                          "argumentTypes": null,
+                                                          "hexvalue": "32",
+                                                          "isConstant": false,
+                                                          "isLValue": false,
+                                                          "isPure": true,
+                                                          "lValueRequested": false,
+                                                          "subdenomination": null,
+                                                          "token": "number",
+                                                          "type": "int_const 2",
+                                                          "value": "2"
+                                                        },
+                                                        "id": 2663,
+                                                        "name": "Literal",
+                                                        "src": "3539:1:10"
+                                                      }
+                                                    ],
+                                                    "id": 2664,
+                                                    "name": "FunctionCall",
+                                                    "src": "3525:16:10"
+                                                  }
+                                                ],
+                                                "id": 2665,
+                                                "name": "FunctionCall",
+                                                "src": "3495:47:10"
+                                              }
+                                            ],
+                                            "id": 2666,
+                                            "name": "MemberAccess",
+                                            "src": "3495:68:10"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": false,
+                                              "isPure": false,
+                                              "isStructConstructorCall": false,
+                                              "lValueRequested": false,
+                                              "names": [
+                                                null
+                                              ],
+                                              "type": "uint256",
+                                              "type_conversion": false
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": [
+                                                    {
+                                                      "typeIdentifier": "t_uint256",
+                                                      "typeString": "uint256"
+                                                    }
+                                                  ],
+                                                  "isConstant": false,
+                                                  "isLValue": false,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "member_name": "mul",
+                                                  "referencedDeclaration": 6679,
+                                                  "type": "function (uint256,uint256) pure returns (uint256)"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 2648,
+                                                      "type": "uint256",
+                                                      "value": "_callGas"
+                                                    },
+                                                    "id": 2667,
+                                                    "name": "Identifier",
+                                                    "src": "3564:8:10"
+                                                  }
+                                                ],
+                                                "id": 2668,
+                                                "name": "MemberAccess",
+                                                "src": "3564:12:10"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 2652,
+                                                  "type": "uint256",
+                                                  "value": "_gasPrice"
+                                                },
+                                                "id": 2669,
+                                                "name": "Identifier",
+                                                "src": "3577:9:10"
+                                              }
+                                            ],
+                                            "id": 2670,
+                                            "name": "FunctionCall",
+                                            "src": "3564:23:10"
+                                          }
+                                        ],
+                                        "id": 2671,
+                                        "name": "FunctionCall",
+                                        "src": "3495:93:10"
+                                      }
+                                    ],
+                                    "id": 2672,
+                                    "name": "MemberAccess",
+                                    "src": "3495:114:10"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "isStructConstructorCall": false,
+                                      "lValueRequested": false,
+                                      "names": [
+                                        null
+                                      ],
+                                      "type": "uint256",
+                                      "type_conversion": false
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": [
+                                            {
+                                              "typeIdentifier": "t_uint256",
+                                              "typeString": "uint256"
+                                            }
+                                          ],
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "member_name": "mul",
+                                          "referencedDeclaration": 6679,
+                                          "type": "function (uint256,uint256) pure returns (uint256)"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 2654,
+                                              "type": "uint256",
+                                              "value": "_gasOverhead"
+                                            },
+                                            "id": 2673,
+                                            "name": "Identifier",
+                                            "src": "3610:12:10"
+                                          }
+                                        ],
+                                        "id": 2674,
+                                        "name": "MemberAccess",
+                                        "src": "3610:16:10"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 2652,
+                                          "type": "uint256",
+                                          "value": "_gasPrice"
+                                        },
+                                        "id": 2675,
+                                        "name": "Identifier",
+                                        "src": "3627:9:10"
+                                      }
+                                    ],
+                                    "id": 2676,
+                                    "name": "FunctionCall",
+                                    "src": "3610:27:10"
+                                  }
+                                ],
+                                "id": 2677,
+                                "name": "FunctionCall",
+                                "src": "3495:143:10"
+                              }
+                            ],
+                            "id": 2678,
+                            "name": "MemberAccess",
+                            "src": "3495:164:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2650,
+                              "type": "uint256",
+                              "value": "_callValue"
+                            },
+                            "id": 2679,
+                            "name": "Identifier",
+                            "src": "3660:10:10"
+                          }
+                        ],
+                        "id": 2680,
+                        "name": "FunctionCall",
+                        "src": "3495:176:10"
+                      }
+                    ],
+                    "id": 2681,
+                    "name": "Return",
+                    "src": "3488:183:10"
+                  }
+                ],
+                "id": 2682,
+                "name": "Block",
+                "src": "3478:200:10"
+              }
+            ],
+            "id": 2683,
+            "name": "FunctionDefinition",
+            "src": "3260:418:10"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "validateEndowment",
+              "payable": false,
+              "scope": 2715,
+              "stateMutability": "pure",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_endowment",
+                      "scope": 2714,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2684,
+                        "name": "ElementaryTypeName",
+                        "src": "3914:4:10"
+                      }
+                    ],
+                    "id": 2685,
+                    "name": "VariableDeclaration",
+                    "src": "3914:15:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_payment",
+                      "scope": 2714,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2686,
+                        "name": "ElementaryTypeName",
+                        "src": "3962:4:10"
+                      }
+                    ],
+                    "id": 2687,
+                    "name": "VariableDeclaration",
+                    "src": "3962:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_donation",
+                      "scope": 2714,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2688,
+                        "name": "ElementaryTypeName",
+                        "src": "4008:4:10"
+                      }
+                    ],
+                    "id": 2689,
+                    "name": "VariableDeclaration",
+                    "src": "4008:14:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_callGas",
+                      "scope": 2714,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2690,
+                        "name": "ElementaryTypeName",
+                        "src": "4055:4:10"
+                      }
+                    ],
+                    "id": 2691,
+                    "name": "VariableDeclaration",
+                    "src": "4055:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_callValue",
+                      "scope": 2714,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2692,
+                        "name": "ElementaryTypeName",
+                        "src": "4101:4:10"
+                      }
+                    ],
+                    "id": 2693,
+                    "name": "VariableDeclaration",
+                    "src": "4101:15:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_gasPrice",
+                      "scope": 2714,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2694,
+                        "name": "ElementaryTypeName",
+                        "src": "4149:4:10"
+                      }
+                    ],
+                    "id": 2695,
+                    "name": "VariableDeclaration",
+                    "src": "4149:14:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_gasOverhead",
+                      "scope": 2714,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2696,
+                        "name": "ElementaryTypeName",
+                        "src": "4196:4:10"
+                      }
+                    ],
+                    "id": 2697,
+                    "name": "VariableDeclaration",
+                    "src": "4196:17:10"
+                  }
+                ],
+                "id": 2698,
+                "name": "ParameterList",
+                "src": "3913:301:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2714,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 2699,
+                        "name": "ElementaryTypeName",
+                        "src": "4244:4:10"
+                      }
+                    ],
+                    "id": 2700,
+                    "name": "VariableDeclaration",
+                    "src": "4244:4:10"
+                  }
+                ],
+                "id": 2701,
+                "name": "ParameterList",
+                "src": "4243:6:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2701
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": ">=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2685,
+                              "type": "uint256",
+                              "value": "_endowment"
+                            },
+                            "id": 2702,
+                            "name": "Identifier",
+                            "src": "4271:10:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2683,
+                                  "type": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)",
+                                  "value": "computeEndowment"
+                                },
+                                "id": 2703,
+                                "name": "Identifier",
+                                "src": "4285:16:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2687,
+                                  "type": "uint256",
+                                  "value": "_payment"
+                                },
+                                "id": 2704,
+                                "name": "Identifier",
+                                "src": "4315:8:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2689,
+                                  "type": "uint256",
+                                  "value": "_donation"
+                                },
+                                "id": 2705,
+                                "name": "Identifier",
+                                "src": "4337:9:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2691,
+                                  "type": "uint256",
+                                  "value": "_callGas"
+                                },
+                                "id": 2706,
+                                "name": "Identifier",
+                                "src": "4360:8:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2693,
+                                  "type": "uint256",
+                                  "value": "_callValue"
+                                },
+                                "id": 2707,
+                                "name": "Identifier",
+                                "src": "4382:10:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2695,
+                                  "type": "uint256",
+                                  "value": "_gasPrice"
+                                },
+                                "id": 2708,
+                                "name": "Identifier",
+                                "src": "4406:9:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2697,
+                                  "type": "uint256",
+                                  "value": "_gasOverhead"
+                                },
+                                "id": 2709,
+                                "name": "Identifier",
+                                "src": "4429:12:10"
+                              }
+                            ],
+                            "id": 2710,
+                            "name": "FunctionCall",
+                            "src": "4285:166:10"
+                          }
+                        ],
+                        "id": 2711,
+                        "name": "BinaryOperation",
+                        "src": "4271:180:10"
+                      }
+                    ],
+                    "id": 2712,
+                    "name": "Return",
+                    "src": "4264:187:10"
+                  }
+                ],
+                "id": 2713,
+                "name": "Block",
+                "src": "4254:204:10"
+              }
+            ],
+            "id": 2714,
+            "name": "FunctionDefinition",
+            "src": "3887:571:10"
+          }
+        ],
+        "id": 2715,
+        "name": "ContractDefinition",
+        "src": "133:4327:10"
+      }
+    ],
+    "id": 2716,
+    "name": "SourceUnit",
+    "src": "0:4461:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-26T00:22:48.739Z"
+}
