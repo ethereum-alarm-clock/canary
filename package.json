@@ -6,9 +6,10 @@
   "directories": {
     "lib": "lib",
     "test": "test"
-  },
+},
   "scripts": {
-    "test": "truffle test"
+    "test": "truffle test",
+    "ghpages": "git subtree push --prefix site/dist origin gh-pages"
   },
   "author": "lsaether",
   "license": "MIT",
